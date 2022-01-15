@@ -1,0 +1,17 @@
+<div class="container p-3">
+<h4>Login</h4>
+
+    <form [formGroup]="form">
+        <div class="form-group">
+            <label for="passwort">Benutzername</label>
+            <input type="text" class="form-control" formControlName="benutzerName" id="benutzername" placeholder="Benutzername">
+        </div>
+
+        <div class="form-group">
+            <label for="passwort">Password</label>
+            <input type="password" class="form-control" formControlName="passwort" id="passwort" placeholder="Passwort">
+        </div>
+
+        <button class="btn btn-primary mt-3" (click)="login()">Einloggen</button>
+    </form>
+</div>

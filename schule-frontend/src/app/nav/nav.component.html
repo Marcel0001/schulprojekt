@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img class="logo" src="../../assets/images/SmartSoft-Logo.png" alt="Smartsoft Logo">
+    </a>
+
+    <div>
+      <ul class="navbar-nav">
+
+        <li *ngIf="!loggedIn" class="nav-item">
+          <a class="nav-link" (click)="openModalWithComponent()">Einloggen</a>
+        </li>
+        <li *ngIf="loggedIn" class="nav-item">
+          <a [routerLink]="['/kunden']" class="nav-link" href="#">Kunden anlegen</a>
+        </li>
+        <li *ngIf="loggedIn" class="nav-item">
+          <a class="nav-link" href="#" (click)="logout()">Ausloggen</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>

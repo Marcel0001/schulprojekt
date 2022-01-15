@@ -1,0 +1,14 @@
+.navbar-nav {
+    margin-left: auto;
+    height: 4vh;
+}
+
+.nav-item {
+    cursor: pointer;
+}
+
+
+.logo {
+  max-width: auto;
+  height:30px;
+}

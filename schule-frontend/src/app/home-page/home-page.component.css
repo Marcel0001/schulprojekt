@@ -1,0 +1,32 @@
+.small-box {
+    display: flex;
+    flex: 0 1 45%;
+    padding: 2rem;
+}
+
+.headline {
+    font-size: 50pt;
+}
+
+.background {
+    background-image: url('../../assets/images/wave.svg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    position: absolute;
+    height: 92.5vh;
+    width: 100vw;
+    padding: 0 5%;
+}
+
+.content-wrapper {
+    height: 80%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 1400px) {
+   .background {
+       background-image: none;
+   }
+}

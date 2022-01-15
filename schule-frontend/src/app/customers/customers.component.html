@@ -1,0 +1,73 @@
+<form class="p-5" [formGroup]="customersForm" (submit)="addCustomer()">
+
+
+  <div class="form-group">
+    <label for="kdnr">Kdnr</label>
+    <input formControlName="kdnr" type="text" minlength="12" maxlength="12" class="form-control" id="kdnr"
+      placeholder="12-Stellige Kundennummer">
+  </div>
+
+  <div
+    *ngIf="customersForm.controls['kdnr'].invalid && (customersForm.controls['kdnr'].dirty || customersForm.controls['kdnr'].touched)"
+    class="alert p-1">
+    <div *ngIf="customersForm.controls['kdnr'].errors">
+      Die Kundennummer muss 12-Stellig sein.
+    </div>
+  </div>
+
+
+  <div class="form-group mt-2">
+    <label for="benutzerName">Benutzername</label>
+    <input formControlName="benutzerName" type="text" class="form-control" id="benutzerName" placeholder="Benutzername">
+  </div>
+
+  <div
+    *ngIf="customersForm.controls['benutzerName'].invalid && (customersForm.controls['benutzerName'].dirty || customersForm.controls['benutzerName'].touched)"
+    class="alert p-1">
+    <div *ngIf="customersForm.controls['benutzerName'].errors">
+      Benutzername benötigt
+    </div>
+  </div>
+
+
+
+  <div class="form-group mt-2">
+    <label for="tarifModell">Tarifmodell</label>
+    <select formControlName="tarifModell" class="form-select" id="tarifModell">
+      <option value="basis">Basis</option>
+      <option value="medium">Medium</option>
+      <option value="premium">Premium</option>
+    </select>
+  </div>
+
+  <div
+    *ngIf="customersForm.controls['tarifModell'].invalid && (customersForm.controls['tarifModell'].dirty || customersForm.controls['tarifModell'].touched)"
+    class="alert p-1">
+    <div *ngIf="customersForm.controls['tarifModell'].errors">
+      Tarifmodell benötigt
+    </div>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary mt-2">Hinzufügen</button>
+</form>
+
+
+
+<table class="table px-5">
+  <thead>
+    <tr>
+      <th>Kundennummer</th>
+      <th>Name</th>
+      <th>Tarifmodell</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let customer of customers">
+      <th>{{customer.kdnr}}</th>
+      <th>{{customer.benutzerName}}</th>
+      <th>{{customer.tarifModell}}</th>
+    </tr>
+  </tbody>
+</table>
